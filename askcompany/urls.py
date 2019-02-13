@@ -21,7 +21,7 @@ from django.urls import path
 from blog.views import index, hello_times
 from blog.views import articles_by_year
 
- from django.urls import register_converter
+from django.urls import register_converter
 from blog.converters import FourDigitYearConverter
 
  register_converter(FourDigitYearConverter, 'year')
