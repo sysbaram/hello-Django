@@ -19,7 +19,6 @@ urlpatterns = [
     # re_path('^blog/1/$', post_detail),
     # re_path('^blog/1/edit/$', post_edit),
 
-    path('admin/', admin.site.urls),	    
     path('blog/hello_times/<int:times>/', hello_times),
      # re_path(r'blog/hello_times/(?P<times>\d+)/$', hello_times),
 
