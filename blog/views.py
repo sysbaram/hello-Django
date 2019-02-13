@@ -12,6 +12,6 @@ def hello_times(request, times):
     return HttpResponse(message)
 
 def articles_by_year(request, year):
-return HttpResponse(f'''
-    {year}년도에 대한 목록
+    return HttpResponse(f'''
+        {year}년도에 대한 목록
 ''')
