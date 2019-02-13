@@ -24,7 +24,7 @@ from blog.views import articles_by_year
 from django.urls import register_converter
 from blog.converters import FourDigitYearConverter
 
- register_converter(FourDigitYearConverter, 'year')
+register_converter(FourDigitYearConverter, 'year')
 
 
 
