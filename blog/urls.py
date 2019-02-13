@@ -1,12 +1,12 @@
 
 
 from django.urls import path, re_path	
-from blog.views import index, hello_times
-from blog.views import articles_by_year
+from views import index, hello_times
+from views import articles_by_year
 
 from django.urls import register_converter
-from blog.converters import FourDigitYearConverter
-from blog.converters import SlugUnicodeConverter
+from converters import FourDigitYearConverter
+from converters import SlugUnicodeConverter
 
 register_converter(FourDigitYearConverter, 'year')
 register_converter(SlugUnicodeConverter, 'slug_unicode')
@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),	    
     path('blog/hello_times/<int:times>/', hello_times),
      # re_path(r'blog/hello_times/(?P<times>\d+)/$', hello_times),
-     
+
     path('', index),
     # re_path(r'^$', index),
 ]
