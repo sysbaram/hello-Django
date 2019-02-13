@@ -1,12 +1,11 @@
 
 
 from django.urls import path, re_path	
-from views import index, hello_times
-from views import articles_by_year
+from blog.views import index, hello_times
+from blog.views import articles_by_year
 
 from django.urls import register_converter
-from converters import FourDigitYearConverter
-from converters import SlugUnicodeConverter
+from blog.converters import FourDigitYearConverter, SlugUnicodeConverter
 
 register_converter(FourDigitYearConverter, 'year')
 register_converter(SlugUnicodeConverter, 'slug_unicode')
