@@ -4,3 +4,11 @@ git push 서버지칭 브랜치
 
 git push origin master    # github 로 보내는 것
 git push heroku master    # heroku 로 보내는 것
+
+
+
+
+
+python manage.py runserver
+python manage.py create:
+python manage.py startapp App_name

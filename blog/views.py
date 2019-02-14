@@ -66,6 +66,8 @@ def 사원증_이미지_응답(request):
     # ttf_path = 'C:/Windows/Fonts/malgun.ttf' # 윈도우, 맥: 
     # ttf_path = '/Library/Fonts/AppleGothic.ttf'
 
+
+
     ttf_path = 'assets/fonts/malgun.ttf'
     text = request.GET.get('name', '익명')
 
