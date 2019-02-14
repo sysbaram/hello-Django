@@ -1,0 +1,27 @@
+import requests
+from io import BytesIO
+from PIL import Image, ImageDraw, ImageFont
+
+ttf_path = 'C:/Windows/Fonts/malgun.ttf' # 윈도우, 맥: 
+# ttf_path = '/Library/Fonts/AppleGothic.ttf'
+
+image_url = 'http://www.flowermeaning.com/flower-pics/Calla-Lily-Meaning.jpg'
+res = requests.get(image_url) # 서버로 HTTP GET 요청하여, 응답 획득
+
+io = BytesIO(res.content) # 응답의 Raw Body  메모리 파일 객체 BytesIO 인스턴스 생성
+io.seek(0) # 파일의 처음으로 커서를 이동
+canvas = Image.open(io).convert('RGBA') # 이미지 파일을 열고, RGBA 모드로 변환
+font = ImageFont.truetype(ttf_path, 40) # 지정 경로의 TrueType 폰트, 폰트크기 40
+draw = ImageDraw.Draw(canvas) # canvas에 대한 ImageDraw 객체 획득
+                                
+text = 'YS (사번: 50178)'
+left, top = 10, 10
+margin = 10
+width, height = font.getsize(text)
+right = left + width + margin
+bottom = top + height + margin
+
+draw.rectangle((left, top, right, bottom), (255, 255, 224))
+draw.text((15,15), text, font=font, fill=(20, 20, 20))
+
+canvas.show()
