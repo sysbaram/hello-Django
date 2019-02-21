@@ -1,7 +1,21 @@
-<h1>{{ shop }}</h1>
+{% extends "shop/layout.html" %}
 
- {{ shop.desc }} |
-{{ shop.address }}
+{% block content %}
+    <div class="container">
+        <div class="col-sm-12">
+            <h1>{{ shop }}</h1>
 
- <hr/>
-<a href="/shop/">목록으로</a>
+            {{ shop.desc }} |
+            {{ shop.address }}
+
+            {% if shop.photo %}
+            <img src="{{ shop.photo.url }}" />
+            {% endif %}
+
+
+            <hr/>
+            <a href="/shop/" class="btn btn-primary">목록으로</a>
+        </div>
+    </div>
+
+{% endblock %}

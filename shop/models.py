@@ -30,6 +30,7 @@ class Shop(models.Model):
 class Item(models.Model):
     Shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
+    photo = models.ImageField(blank=True)
     desc = models.TextField(blank=True)
     price = models.PositiveIntegerField()
     is_public = models.BooleanField(default=False)
